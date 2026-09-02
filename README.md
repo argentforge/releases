@@ -1,52 +1,49 @@
-# ArgentForge — Official Releases
+# ArgentForge Releases & Open Ecosystem
 
-Welcome to the official release repository for **Booksmith Studio** and **DarkQuill**.
-
----
-
-## 📥 Downloads
-
-Download the latest verified alpha installer for your operating system from the **[Releases](https://github.com/argentforge/releases/releases)** tab.
-
-| Application | Platform | Package Format | Status |
-| :--- | :--- | :--- | :--- |
-| **Booksmith Studio** | 🍏 **macOS** | `.dmg` (Apple Silicon & Universal) | Alpha |
-| **Booksmith Studio** | 🪟 **Windows** | `.exe` (Installer) / `.msi` | Alpha |
-| **Booksmith Studio** | 🐧 **Linux** | `.AppImage` / `.deb` / `.rpm` | Alpha |
-| **DarkQuill Reader** | 🤖 **Android** | `.apk` (Direct) / `.aab` | Alpha |
+Welcome to the official public distribution hub for **[Booksmith Studio](https://argentforge.xyz)** and the **DarkQuill Reader**.
 
 ---
 
-## ✨ Overview
+## 📢 Community News & Open-Source Roadmap
 
-### 🖥️ Booksmith Studio
-A high-performance, local-first desktop application designed for authors, novelists, and interactive fiction creators.
-* **The Living Novel**: Write traditional linear novels or rich branching interactive gamebooks in a single unified workspace.
-* **100% Offline & Local-First**: Your manuscripts and lore databases are stored directly on your computer in human-readable `.gyj` archives. Zero telemetry, zero cloud locks.
-* **Universal Typesetting Engine**: Export publication-ready EPUBs, print PDFs, and encrypted gamebook vaults with automated layout optimization.
-
-### 📱 DarkQuill Mobile Reader
-The companion reader for Living Novels and interactive fiction.
-* **Interactive Playback**: Experience branching narrative choices, stat tracking, and inventory logic.
-* **256-Bit Vault Protection**: Play encrypted `.gyj` gamebook adventures natively with offline security.
+### 🌟 Alpha Release v0.8.0 is Live!
+We are excited to release multi-platform alpha binaries for **macOS (Universal Intel & Apple Silicon)**, **Windows 10/11**, **Linux (AppImage/deb/rpm)**, and **Android (APK/AAB)**. Download verified installers directly from our **[Releases Tab](https://github.com/argentforge/releases/releases)**.
 
 ---
 
-## 🔒 Security & Privacy
+### 🟢 Open-Source Core Released (`@argentforge/core`)
+The fundamental data layer of the ArgentForge ecosystem is now open-source under the **Apache 2.0 License**:
+👉 **Repository**: [https://github.com/argentforge/core](https://github.com/argentforge/core)
 
-* **Zero Cloud Telemetry**: Neither Booksmith nor DarkQuill transmits your manuscripts, character dossiers, or worldbuilding notes over the internet.
-* **You Own Your Work**: You retain 100% exclusive copyright and ownership of all content created within or exported from the apps.
-
----
-
-## 🐞 Issues & Feedback
-
-We welcome your feedback and bug reports during this alpha testing phase:
-* **Bug Reports**: Open an issue using the [Bug Report Template](https://github.com/argentforge/releases/issues/new?template=bug_report.md).
-* **Feature Requests**: Suggest improvements via the [Feature Request Template](https://github.com/argentforge/releases/issues/new?template=feature_request.md).
+This package contains the complete **`.gyj` Open Document Specification**, TypeScript data models (Chapters, Scenes, Binder Nodes, Front-Matter), JSON serializers, and schema validators. It guarantees that authors retain 100% data ownership over their manuscripts with zero vendor lock-in.
 
 ---
 
-## 📄 License
+### 🗺️ Our Phased Open-Source Commitment
+We believe in building software that authors and developers can trust for decades. 
 
-Distributed under the **[ArgentForge Free Application License](LICENSE)** — 100% Free to download and use for all personal and commercial book publishing.
+To ensure safety and reliability, **Booksmith is being open-sourced in structured phases**:
+1. **Phase 1 (Live Now)**: The Open `.gyj` Document Models & Schema Serializers ([@argentforge/core](https://github.com/argentforge/core)).
+2. **Phase 2 (Upcoming)**: The Official Website codebase and documentation portal.
+3. **Phase 3 (Upcoming)**: The Booksmith Desktop Application UI and community CLI tools.
+
+> **A Note on Code Sanitization**: As code modules are systematically audited and cleaned to remove internal developer configurations, private tokens, or sensitive artifacts, we will publish them to the community in scheduled stages. Our mission is to provide an open, transparent creative sanctuary for authors worldwide.
+
+---
+
+## 📦 Verified Installer Matrix
+
+| Platform | Format | Recommended Architecture |
+| :--- | :--- | :--- |
+| 🍏 **macOS** | **Universal DMG** (`.dmg`) | macOS 12.0+ (Apple Silicon M1–M4 & Intel) |
+| 🪟 **Windows** | **Setup Installer** (`.exe`) / **MSI** | Windows 10 / 11 (64-bit) |
+| 🐧 **Linux** | **AppImage** / **.deb** / **.rpm** | Universal Linux Distributions |
+| 🤖 **Android** | **Standalone APK** (`.apk`) | Android 6.0+ Phones & Tablets |
+
+---
+
+## 🛡️ License & Data Sovereignty
+Booksmith and DarkQuill are distributed under the **[ArgentForge Free Application License](https://argentforge.xyz)** — 100% Free for personal and commercial publishing with zero royalties and zero telemetry.
+
+- **Official Website**: [https://argentforge.xyz](https://argentforge.xyz)
+- **Bug Reports & Feedback**: [GitHub Issues Tracker](https://github.com/argentforge/releases/issues)
