@@ -4,9 +4,11 @@ Welcome to the official public distribution hub for **[Booksmith Studio](https:/
 
 ---
 
-## 📢 Alpha Release v0.8.0 is Live!
+## 📢 Beta Release v0.8.0-beta.2 is Live
 
-Multi-platform alpha binaries are available for **macOS (Universal Intel & Apple Silicon)**, **Windows 10/11**, **Linux (AppImage/deb/rpm)**, and **Android (APK/AAB)**. Download verified installers directly from our **[Releases Tab](https://github.com/argentforge/releases/releases)**.
+Multi-platform desktop and mobile release binaries are available for **macOS (Universal Apple Silicon & Intel)**, **Windows 10/11 (EXE & MSI)**, **Linux (AppImage, DEB, RPM)**, and **Android (APK & AAB)**.
+
+Download verified installers directly from the **[Releases Tab](https://github.com/argentforge/releases/releases)** or from the official download portal at **[argentforge.xyz](https://argentforge.xyz)**.
 
 ---
 
@@ -33,36 +35,45 @@ Episode-based serialization workflow for digital fiction and web platforms. Feat
 
 ---
 
+### 4. Gamebook & Interactive Story Studio
+Branching narrative graph canvas, player state tracking (variables, conditions, counters), and situation authoring for interactive storytellers. Export encrypted living novels (`.gyjpkg`) readable directly in the companion DarkQuill mobile app.
+
+---
+
+## 📦 Verified Installer Matrix (v0.8.0-beta.2)
+
+| Platform | Format | Recommended Target | Direct Download |
+| :--- | :--- | :--- | :--- |
+| 🍏 **macOS** | **Universal DMG** (`.dmg`) | macOS 12.0+ (Apple Silicon M1–M4 & Intel x86_64) | [Booksmith_0.8.0_universal.dmg](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_0.8.0_universal.dmg) |
+| 🍏 **macOS** | **Standalone Archive** (`.tar.gz`) | Standalone portable `.app` bundle | [Booksmith_universal.app.tar.gz](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_universal.app.tar.gz) |
+| 🪟 **Windows** | **Setup Installer** (`.exe`) | Windows 10 & 11 (64-bit) | [Booksmith_0.8.0_x64-setup.exe](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_0.8.0_x64-setup.exe) |
+| 🪟 **Windows** | **Enterprise Package** (`.msi`) | Enterprise & group policy deployment | [Booksmith_0.8.0_x64_en-US.msi](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_0.8.0_x64_en-US.msi) |
+| 🐧 **Linux** | **AppImage** (`.AppImage`) | Universal Linux distributions (Ubuntu, Fedora, Arch) | [Booksmith_0.8.0_amd64.AppImage](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_0.8.0_amd64.AppImage) |
+| 🐧 **Linux** | **Debian Package** (`.deb`) | Debian, Ubuntu, Linux Mint | [Booksmith_0.8.0_amd64.deb](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith_0.8.0_amd64.deb) |
+| 🐧 **Linux** | **RPM Package** (`.rpm`) | Fedora, Red Hat Enterprise Linux, openSUSE | [Booksmith-0.8.0-1.x86_64.rpm](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/Booksmith-0.8.0-1.x86_64.rpm) |
+| 🤖 **Android** | **Standalone APK** (`.apk`) | Android 6.0+ Phones & Tablets | [DarkQuill-Reader-release.apk](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/DarkQuill-Reader-release.apk) |
+| 🤖 **Android** | **Google Play Bundle** (`.aab`) | Play Store distribution package | [DarkQuill-Reader-release.aab](https://github.com/argentforge/releases/releases/download/v0.8.0-beta.2/DarkQuill-Reader-release.aab) |
+
+---
+
 ## 🟢 Open-Source Core (`@argentforge/core`)
-The fundamental data layer of the ArgentForge ecosystem is open-source under the **Apache 2.0 License**:  
+The foundational document domain of the ArgentForge ecosystem is open-source under the **Apache 2.0 License**:  
 👉 **Repository**: [https://github.com/argentforge/core](https://github.com/argentforge/core)
 
 This package contains the complete **`.gyj` Open Document Specification**, TypeScript data models (Chapters, Scenes, Binder Nodes, Front-Matter), JSON serializers, and schema validators. It guarantees that authors retain 100% data ownership over their manuscripts with zero vendor lock-in.
 
 ---
 
-## 🗺️ Structured Open-Source Roadmap
-We believe in building software that authors and developers can trust for decades:
-
-1. **Phase 1 (Live Now)**: The Open `.gyj` Document Models & Schema Serializers ([@argentforge/core](https://github.com/argentforge/core)).
-2. **Phase 2 (Upcoming)**: The Official Website codebase and documentation portal.
-3. **Phase 3 (Upcoming)**: The Booksmith Desktop Application UI and community CLI tools.
-
----
-
-## 📦 Verified Installer Matrix
-
-| Platform | Format | Recommended Architecture | Direct Download |
-| :--- | :--- | :--- | :--- |
-| 🍏 **macOS** | **Universal DMG** (`.dmg`) | macOS 12.0+ (Apple Silicon M1–M4 & Intel) | [Download .dmg](https://github.com/argentforge/releases/releases/latest) |
-| 🪟 **Windows** | **Setup Installer** (`.exe`) / **MSI** | Windows 10 / 11 (64-bit) | [Download .exe](https://github.com/argentforge/releases/releases/latest) |
-| 🐧 **Linux** | **AppImage** / **.deb** / **.rpm** | Universal Linux Distributions | [Download AppImage](https://github.com/argentforge/releases/releases/latest) |
-| 🤖 **Android** | **Standalone APK** (`.apk`) | Android 6.0+ Phones & Tablets | [Download .apk](https://github.com/argentforge/releases/releases/latest) |
+## 🗺️ Structured Roadmap
+1. **Phase 1 (Active)**: Open `.gyj` Document Models & Schema Serializers ([@argentforge/core](https://github.com/argentforge/core)).
+2. **Phase 2 (Active)**: Official Website codebase, documentation portal, and release distribution.
+3. **Phase 3 (Active)**: Booksmith Desktop Application UI and DarkQuill reader evolution.
 
 ---
 
 ## 🛡️ License & Data Sovereignty
-Booksmith and DarkQuill are distributed under the **[ArgentForge Free Application License](https://argentforge.xyz)** — 100% Free for personal and commercial publishing with zero royalties and zero telemetry.
+Booksmith and DarkQuill are distributed under the **ArgentForge Free Application License** — 100% Free for personal and commercial publishing with zero royalties, zero advertising, and zero telemetry. All documents are stored strictly on your local disk.
 
 - **Official Website**: [https://argentforge.xyz](https://argentforge.xyz)
 - **Bug Reports & Feedback**: [GitHub Issues Tracker](https://github.com/argentforge/releases/issues)
+- **Contact**: `team@argentforge.xyz`
