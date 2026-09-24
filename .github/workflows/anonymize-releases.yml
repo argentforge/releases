@@ -1,0 +1,77 @@
+name: Anonymize Releases
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Release Tag to Anonymize (or "all")'
+        required: true
+        default: 'all'
+
+permissions:
+  contents: write
+
+jobs:
+  anonymize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Recreate Releases as GitHub Actions Bot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          TARGET="${{ github.event.inputs.target }}"
+          
+          anonymize_one() {
+            local tag="$1"
+            echo "=========================================="
+            echo "Processing release tag: $tag"
+            echo "=========================================="
+            
+            if ! gh release view "$tag" > /dev/null 2>&1; then
+              echo "Release $tag does not exist. Skipping."
+              return 0
+            fi
+            
+            TITLE=$(gh release view "$tag" --json name -q .name)
+            BODY=$(gh release view "$tag" --json body -q .body)
+            IS_PRERELEASE=$(gh release view "$tag" --json isPrerelease -q .isPrerelease)
+            
+            echo "Title: $TITLE"
+            echo "Prerelease: $IS_PRERELEASE"
+            
+            WORK_DIR="/tmp/assets_$tag"
+            rm -rf "$WORK_DIR"
+            mkdir -p "$WORK_DIR"
+            
+            echo "Downloading all assets for $tag..."
+            gh release download "$tag" --dir "$WORK_DIR"
+            
+            echo "Downloaded assets:"
+            ls -lh "$WORK_DIR"
+            
+            echo "Deleting existing user-attributed release $tag..."
+            gh release delete "$tag" --yes
+            
+            echo "Recreating release $tag as github-actions[bot]..."
+            PRE_FLAG=""
+            if [ "$IS_PRERELEASE" = "true" ]; then
+              PRE_FLAG="--prerelease"
+            fi
+            
+            gh release create "$tag" "$WORK_DIR"/* --title "$TITLE" --notes "$BODY" $PRE_FLAG
+            
+            echo "Successfully recreated $tag under github-actions[bot]!"
+            rm -rf "$WORK_DIR"
+          }
+          
+          if [ "$TARGET" = "all" ]; then
+            for t in v0.8.0-alpha.9 v0.8.0-alpha.10 v0.8.0-beta.1 v0.8.0-beta.2; do
+              anonymize_one "$t"
+            done
+          else
+            anonymize_one "$TARGET"
+          fi
